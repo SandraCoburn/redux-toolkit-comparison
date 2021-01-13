@@ -1,4 +1,4 @@
-import { combineReducers, createStore, applyMiddleware, compose } from 'redux';
+import { combineReducers, createStore, applyMiddleware } from 'redux';
 import { Todo } from './type';
 import { v1 as uuid } from 'uuid';
 import thunk from 'redux-thunk';
@@ -45,7 +45,7 @@ export const editTodoActionCreator = (data: {
   const { id, desc } = data;
   return {
     type: EDIT_TODO,
-    payload: { id: uuid(), desc },
+    payload: { id, desc },
   };
 };
 
